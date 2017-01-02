@@ -1,6 +1,5 @@
 //
 //  ViewController.swift
-//  Orphe-Instrument
 //
 //  Created by kyosuke on 2017/01/01.
 //  Copyright © 2017年 kyosuke. All rights reserved.
