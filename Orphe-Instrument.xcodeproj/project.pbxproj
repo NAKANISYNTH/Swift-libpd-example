@@ -17,6 +17,8 @@
 		E6B7A3111E1836800029B005 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B7A3101E1836800029B005 /* AudioToolbox.framework */; };
 		E6B7A3131E1837540029B005 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B7A3121E1837540029B005 /* AVFoundation.framework */; };
 		E6B7A3261E183B650029B005 /* libpd-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B7A3231E183B590029B005 /* libpd-ios.a */; };
+		E6B7A33E1E1962910029B005 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B7A33D1E1962910029B005 /* Player.swift */; };
+		E6B7A3401E196DDA0029B005 /* pd-patches in Resources */ = {isa = PBXBuildFile; fileRef = E6B7A33F1E196DDA0029B005 /* pd-patches */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		E6B7A3101E1836800029B005 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E6B7A3121E1837540029B005 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E6B7A31D1E183B590029B005 /* libpd.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpd.xcodeproj; path = "pd-for-ios/libpd/libpd.xcodeproj"; sourceTree = "<group>"; };
+		E6B7A33D1E1962910029B005 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		E6B7A33F1E196DDA0029B005 /* pd-patches */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "pd-patches"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,11 +136,13 @@
 			children = (
 				E6B7A2D21E181BC00029B005 /* AppDelegate.swift */,
 				E6B7A2D41E181BC00029B005 /* ViewController.swift */,
+				E6B7A33D1E1962910029B005 /* Player.swift */,
 				E6B7A2D61E181BC00029B005 /* Main.storyboard */,
 				E6B7A2D91E181BC00029B005 /* Assets.xcassets */,
 				E6B7A2DB1E181BC00029B005 /* LaunchScreen.storyboard */,
 				E6B7A2DE1E181BC00029B005 /* Info.plist */,
 				E6B7A30A1E1820FC0029B005 /* Orphe-Instrument-Bridging-Header.h */,
+				E6B7A33F1E196DDA0029B005 /* pd-patches */,
 			);
 			path = "Orphe-Instrument";
 			sourceTree = "<group>";
@@ -314,6 +320,7 @@
 				E6B7A2DD1E181BC00029B005 /* LaunchScreen.storyboard in Resources */,
 				E6B7A2DA1E181BC00029B005 /* Assets.xcassets in Resources */,
 				E6B7A2D81E181BC00029B005 /* Main.storyboard in Resources */,
+				E6B7A3401E196DDA0029B005 /* pd-patches in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6B7A2D51E181BC00029B005 /* ViewController.swift in Sources */,
+				E6B7A33E1E1962910029B005 /* Player.swift in Sources */,
 				E6B7A2D31E181BC00029B005 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,7 +508,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nakanisynth.Orphe-Instrument";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 				USER_HEADER_SEARCH_PATHS = "pd-for-ios/libpd/**";
 			};
 			name = Debug;
@@ -515,7 +523,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nakanisynth.Orphe-Instrument";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 				USER_HEADER_SEARCH_PATHS = "pd-for-ios/libpd/**";
 			};
 			name = Release;
@@ -597,6 +605,7 @@
 				E6B7A2F91E181BC00029B005 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6B7A2FA1E181BC00029B005 /* Build configuration list for PBXNativeTarget "Orphe-InstrumentTests" */ = {
 			isa = XCConfigurationList;
@@ -605,6 +614,7 @@
 				E6B7A2FC1E181BC00029B005 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6B7A2FD1E181BC00029B005 /* Build configuration list for PBXNativeTarget "Orphe-InstrumentUITests" */ = {
 			isa = XCConfigurationList;
@@ -613,6 +623,7 @@
 				E6B7A2FF1E181BC00029B005 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
