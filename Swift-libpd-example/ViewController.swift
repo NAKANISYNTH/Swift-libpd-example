@@ -18,6 +18,14 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    @IBAction func triggerButtonAction(sender: AnyObject) {
+        let list = ["trigger1", 1]
+        PdBase.sendList(list, toReceiver: "g_message")
+    }
 
+    @IBAction func trigger2ButtonAction(sender: AnyObject) {
+        let list = ["trigger2", 1]
+        PdBase.sendList(list, toReceiver: "g_message")
+    }
 }
 
