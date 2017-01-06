@@ -22,27 +22,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfK-fp-uKG">
-                                <rect key="frame" x="141" y="318" width="93" height="30"/>
-                                <state key="normal" title="trigger sound"/>
+                                <rect key="frame" x="115" y="318" width="144" height="30"/>
+                                <state key="normal" title="bang sound1 with list"/>
                                 <connections>
-                                    <action selector="triggerButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6l4-gF-KWh"/>
+                                    <action selector="bangSound1WithListButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aa2-k9-rkK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4f-DM-HPN">
-                                <rect key="frame" x="137" y="372" width="102" height="30"/>
-                                <state key="normal" title="trigger sound2"/>
+                                <rect key="frame" x="114" y="394" width="147" height="30"/>
+                                <state key="normal" title="bang sound2 with list"/>
                                 <connections>
-                                    <action selector="trigger2ButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LM7-BP-KFf"/>
+                                    <action selector="bangSound2ButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KEN-XQ-Lku"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpF-IY-3vX">
+                                <rect key="frame" x="143" y="280" width="88" height="30"/>
+                                <state key="normal" title="bang sound1"/>
+                                <connections>
+                                    <action selector="bangSound1ButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fcM-3A-gWq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7GN-wk-MCC">
+                                <rect key="frame" x="109" y="242" width="157" height="30"/>
+                                <state key="normal" title="change Freq of sound1"/>
+                                <connections>
+                                    <action selector="changeFreqSound1ButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rGV-BH-vOf"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="C4f-DM-HPN" firstAttribute="top" secondItem="LfK-fp-uKG" secondAttribute="bottom" constant="24" id="3fG-lv-aTD"/>
-                            <constraint firstItem="LfK-fp-uKG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YDM-4e-qdZ"/>
-                            <constraint firstItem="LfK-fp-uKG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="298" id="YOI-Te-L6M"/>
-                            <constraint firstItem="LfK-fp-uKG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hEq-fl-usi"/>
-                            <constraint firstItem="C4f-DM-HPN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ojq-gq-2Jt"/>
+                            <constraint firstItem="C4f-DM-HPN" firstAttribute="top" secondItem="LfK-fp-uKG" secondAttribute="bottom" constant="46" id="JuF-K6-Kf0"/>
+                            <constraint firstItem="rpF-IY-3vX" firstAttribute="centerX" secondItem="LfK-fp-uKG" secondAttribute="centerX" id="OTw-X0-KwN"/>
+                            <constraint firstItem="7GN-wk-MCC" firstAttribute="centerX" secondItem="rpF-IY-3vX" secondAttribute="centerX" id="P5b-Am-SEJ"/>
+                            <constraint firstItem="7GN-wk-MCC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PSg-O5-kxQ"/>
+                            <constraint firstItem="LfK-fp-uKG" firstAttribute="centerX" secondItem="C4f-DM-HPN" secondAttribute="centerX" id="TmI-JZ-msP"/>
+                            <constraint firstItem="rpF-IY-3vX" firstAttribute="top" secondItem="7GN-wk-MCC" secondAttribute="bottom" constant="8" symbolic="YES" id="eUq-ig-ZjV"/>
+                            <constraint firstItem="LfK-fp-uKG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="spC-Th-8l7"/>
+                            <constraint firstItem="LfK-fp-uKG" firstAttribute="top" secondItem="rpF-IY-3vX" secondAttribute="bottom" constant="8" symbolic="YES" id="uZg-h5-Air"/>
                         </constraints>
                     </view>
                 </viewController>

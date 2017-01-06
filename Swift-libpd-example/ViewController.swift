@@ -17,15 +17,24 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    @IBAction func triggerButtonAction(sender: AnyObject) {
-        let list = ["trigger1", 1]
-        PdBase.sendList(list, toReceiver: "g_message")
+    
+    @IBAction func changeFreqSound1ButtonAction(sender: AnyObject) {
+        PdBase.sendFloat(Float(arc4random())%800+200, toReceiver: "g_freq")
+    }
+    
+    @IBAction func bangSound1ButtonAction(sender: AnyObject) {
+        PdBase.sendBangToReceiver("g_bang")
+    }
+    
+    @IBAction func bangSound1WithListButtonAction(sender: AnyObject) {
+        let list = ["sound1", "bang"]
+        PdBase.sendList(list, toReceiver: "g_list")
     }
 
-    @IBAction func trigger2ButtonAction(sender: AnyObject) {
-        let list = ["trigger2", 1]
-        PdBase.sendList(list, toReceiver: "g_message")
+    @IBAction func bangSound2ButtonAction(sender: AnyObject) {
+        let list = ["sound2", "bang"]
+        PdBase.sendList(list, toReceiver: "g_list")
     }
+    
 }
 

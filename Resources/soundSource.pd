@@ -9,6 +9,7 @@
 #X obj 157 91 del 20;
 #X obj 110 244 outlet~;
 #X obj 39 99 osc~ 440;
+#X obj 33 30 inlet freq;
 #X connect 0 0 1 1;
 #X connect 1 0 7 0;
 #X connect 2 0 0 0;
@@ -18,3 +19,4 @@
 #X connect 5 0 0 0;
 #X connect 6 0 2 0;
 #X connect 8 0 1 0;
+#X connect 9 0 8 0;
