@@ -8,12 +8,14 @@
 class Player : NSObject, PdReceiverDelegate{
     
     let audioController = PdAudioController() // PureData
-    static let sharedInstance = Player()
     var pdPointer:UnsafeMutablePointer<Void>?
     
-    override init() {
-        super.init()
-        
+    
+    class var sharedInstance : Player {
+        struct Static {
+            static let instance : Player = Player()
+        }
+        return Static.instance
     }
     
     func openPdFile(){
@@ -22,7 +24,7 @@ class Player : NSObject, PdReceiverDelegate{
         
         if pdPointer == nil {
             
-            pdPointer = PdBase.openFile("pd-patches/main.pd", path: NSBundle.mainBundle().resourcePath)
+            pdPointer = PdBase.openFile("main.pd", path: NSBundle.mainBundle().resourcePath)
             print("open pd file")
         }
     }
