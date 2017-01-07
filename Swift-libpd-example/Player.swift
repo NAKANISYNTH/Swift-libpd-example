@@ -24,7 +24,7 @@ class Player : NSObject, PdReceiverDelegate{
         
         if pdPointer == nil {
             
-            pdPointer = PdBase.openFile("main.pd", path: NSBundle.mainBundle().resourcePath)
+            pdPointer = PdBase.openFile("main.pd", path: NSBundle.mainBundle().resourcePath!+"/pd-patches")
             print("open pd file")
         }
     }

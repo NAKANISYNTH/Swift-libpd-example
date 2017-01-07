@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E656CEB61E1FA92100E12387 /* main.pd in Resources */ = {isa = PBXBuildFile; fileRef = E656CEB51E1FA92100E12387 /* main.pd */; };
-		E656CEB81E1FDD9A00E12387 /* soundSource.pd in Resources */ = {isa = PBXBuildFile; fileRef = E656CEB71E1FDD9A00E12387 /* soundSource.pd */; };
-		E656CEBA1E1FDEB600E12387 /* folder in Resources */ = {isa = PBXBuildFile; fileRef = E656CEB91E1FDEB600E12387 /* folder */; };
 		E6B7A3111E1836800029B005 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B7A3101E1836800029B005 /* AudioToolbox.framework */; };
 		E6B7A3131E1837540029B005 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B7A3121E1837540029B005 /* AVFoundation.framework */; };
 		E6B7A3261E183B650029B005 /* libpd-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B7A3231E183B590029B005 /* libpd-ios.a */; };
@@ -20,6 +17,7 @@
 		E6B7A3541E1A58040029B005 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6B7A34C1E1A58040029B005 /* Info.plist */; };
 		E6B7A3551E1A58040029B005 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B7A34E1E1A58040029B005 /* Player.swift */; };
 		E6B7A3561E1A58040029B005 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B7A34F1E1A58040029B005 /* ViewController.swift */; };
+		E6B8302F1E20D8AA005A6CC5 /* pd-patches in Resources */ = {isa = PBXBuildFile; fileRef = E6B8302E1E20D8AA005A6CC5 /* pd-patches */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,9 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E656CEB51E1FA92100E12387 /* main.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.pd; sourceTree = "<group>"; };
-		E656CEB71E1FDD9A00E12387 /* soundSource.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = soundSource.pd; sourceTree = "<group>"; };
-		E656CEB91E1FDEB600E12387 /* folder */ = {isa = PBXFileReference; lastKnownFileType = folder; path = folder; sourceTree = "<group>"; };
 		E6B7A2CF1E181BC00029B005 /* Swift-libpd-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-libpd-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6B7A3101E1836800029B005 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E6B7A3121E1837540029B005 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -62,6 +57,7 @@
 		E6B7A34D1E1A58040029B005 /* Swift-libpd-example-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Swift-libpd-example-Bridging-Header.h"; sourceTree = "<group>"; };
 		E6B7A34E1E1A58040029B005 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E6B7A34F1E1A58040029B005 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E6B8302E1E20D8AA005A6CC5 /* pd-patches */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "pd-patches"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +77,7 @@
 		E656CEB21E1FA91000E12387 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E656CEB51E1FA92100E12387 /* main.pd */,
-				E656CEB71E1FDD9A00E12387 /* soundSource.pd */,
-				E656CEB91E1FDEB600E12387 /* folder */,
+				E6B8302E1E20D8AA005A6CC5 /* pd-patches */,
 			);
 			path = Resources;
 			sourceTree = SOURCE_ROOT;
@@ -224,12 +218,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6B8302F1E20D8AA005A6CC5 /* pd-patches in Resources */,
 				E6B7A3521E1A58040029B005 /* LaunchScreen.storyboard in Resources */,
 				E6B7A3511E1A58040029B005 /* Assets.xcassets in Resources */,
-				E656CEB61E1FA92100E12387 /* main.pd in Resources */,
-				E656CEBA1E1FDEB600E12387 /* folder in Resources */,
 				E6B7A3541E1A58040029B005 /* Info.plist in Resources */,
-				E656CEB81E1FDD9A00E12387 /* soundSource.pd in Resources */,
 				E6B7A3531E1A58040029B005 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
