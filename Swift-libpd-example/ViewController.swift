@@ -18,20 +18,20 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func changeFreqSound1ButtonAction(sender: AnyObject) {
-        PdBase.sendFloat(Float(arc4random())%800+200, toReceiver: "g_freq")
+    @IBAction func changeFreqSound1ButtonAction(_ sender: AnyObject) {
+        PdBase.send(Float(arc4random()).truncatingRemainder(dividingBy: 800)+200, toReceiver: "g_freq")
     }
     
-    @IBAction func bangSound1ButtonAction(sender: AnyObject) {
-        PdBase.sendBangToReceiver("g_bang")
+    @IBAction func bangSound1ButtonAction(_ sender: AnyObject) {
+        PdBase.sendBang(toReceiver: "g_bang")
     }
     
-    @IBAction func bangSound1WithListButtonAction(sender: AnyObject) {
+    @IBAction func bangSound1WithListButtonAction(_ sender: AnyObject) {
         let list = ["sound1", "bang"]
         PdBase.sendList(list, toReceiver: "g_list")
     }
 
-    @IBAction func bangSound2ButtonAction(sender: AnyObject) {
+    @IBAction func bangSound2ButtonAction(_ sender: AnyObject) {
         let list = ["sound2", "bang"]
         PdBase.sendList(list, toReceiver: "g_list")
     }

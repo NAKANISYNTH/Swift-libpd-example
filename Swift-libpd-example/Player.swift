@@ -8,7 +8,7 @@
 class Player : NSObject, PdReceiverDelegate{
     
     let audioController = PdAudioController() // PureData
-    var pdPointer:UnsafeMutablePointer<Void>?
+    var pdPointer:UnsafeMutableRawPointer?
     
     
     class var sharedInstance : Player {
@@ -18,13 +18,22 @@ class Player : NSObject, PdReceiverDelegate{
         return Static.instance
     }
     
+    override init() {
+        super.init()
+        NotificationCenter.default.addObserver(self, selector: #selector(AVAudioSessionRouteChange(notification:)), name: .AVAudioSessionRouteChange, object: nil)
+    }
+    
     func openPdFile(){
-        audioController.configurePlaybackWithSampleRate(44100, numberChannels: 2, inputEnabled: false, mixingEnabled: true)
-        audioController.active = true
+        print(AVAudioSession.sharedInstance().currentRoute.outputs)
+        print("preferredSampleRate:",AVAudioSession.sharedInstance().preferredSampleRate)
+        print("sample rate:",AVAudioSession.sharedInstance().sampleRate)
+        let sampleRate = AVAudioSession.sharedInstance().sampleRate
+        audioController.configurePlayback(withSampleRate: Int32(sampleRate), numberChannels: 2, inputEnabled: false, mixingEnabled: true)
+        audioController.isActive = true
         
         if pdPointer == nil {
             
-            pdPointer = PdBase.openFile("main.pd", path: NSBundle.mainBundle().resourcePath!+"/pd-patches")
+            pdPointer = PdBase.openFile("main.pd", path: Bundle.main.resourcePath!+"/pd-patches")
             print("open pd file")
         }
     }
@@ -35,7 +44,16 @@ class Player : NSObject, PdReceiverDelegate{
             pdPointer = nil
             print("close pd file")
         }
-        audioController.active = false
+        audioController.isActive = false
     }
     
+    func AVAudioSessionRouteChange(notification:Notification) {
+        print(AVAudioSession.sharedInstance().currentRoute.outputs)
+        print("preferredSampleRate:",AVAudioSession.sharedInstance().preferredSampleRate)
+        print("sample rate:",AVAudioSession.sharedInstance().sampleRate)
+        
+        
+        let sampleRate = AVAudioSession.sharedInstance().sampleRate
+        audioController.configurePlayback(withSampleRate: Int32(sampleRate), numberChannels: 2, inputEnabled: false, mixingEnabled: true)
+    }
 }
