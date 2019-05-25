@@ -4,6 +4,7 @@
 //  Created by kyosuke on 2017/01/02.
 //  Copyright © 2017年 kyosuke. All rights reserved.
 //
+import libpd
 
 class Player : NSObject, PdReceiverDelegate{
     
