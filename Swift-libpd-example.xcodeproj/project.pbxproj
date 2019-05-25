@@ -14,13 +14,26 @@
 		E6B7A3511E1A58040029B005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6B7A3471E1A58040029B005 /* Assets.xcassets */; };
 		E6B7A3521E1A58040029B005 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B7A3481E1A58040029B005 /* LaunchScreen.storyboard */; };
 		E6B7A3531E1A58040029B005 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B7A34A1E1A58040029B005 /* Main.storyboard */; };
-		E6B7A3541E1A58040029B005 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6B7A34C1E1A58040029B005 /* Info.plist */; };
 		E6B7A3551E1A58040029B005 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B7A34E1E1A58040029B005 /* Player.swift */; };
 		E6B7A3561E1A58040029B005 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B7A34F1E1A58040029B005 /* ViewController.swift */; };
 		E6B8302F1E20D8AA005A6CC5 /* pd-patches in Resources */ = {isa = PBXBuildFile; fileRef = E6B8302E1E20D8AA005A6CC5 /* pd-patches */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E68B97C72299405400511794 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6B7A31D1E183B590029B005 /* libpd.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 30C3D36D1FAA200100C67F08;
+			remoteInfo = "libpd-ios-multi";
+		};
+		E68B97C92299405400511794 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6B7A31D1E183B590029B005 /* libpd.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 30C3D2FA1FAA1FCC00C67F08;
+			remoteInfo = "libpd-osx-multi";
+		};
 		E6B7A3221E183B590029B005 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E6B7A31D1E183B590029B005 /* libpd.xcodeproj */;
@@ -115,6 +128,8 @@
 			children = (
 				E6B7A3231E183B590029B005 /* libpd-ios.a */,
 				E6B7A3251E183B590029B005 /* libpd-osx.a */,
+				E68B97C82299405400511794 /* libpd-ios-multi.a */,
+				E68B97CA2299405400511794 /* libpd-osx-multi.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,7 +182,7 @@
 				TargetAttributes = {
 					E6B7A2CE1E181BC00029B005 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 7P8C3UWHK5;
+						DevelopmentTeam = 3NDA5N7SC5;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -178,6 +193,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -198,6 +214,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		E68B97C82299405400511794 /* libpd-ios-multi.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libpd-ios-multi.a";
+			remoteRef = E68B97C72299405400511794 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E68B97CA2299405400511794 /* libpd-osx-multi.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libpd-osx-multi.a";
+			remoteRef = E68B97C92299405400511794 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		E6B7A3231E183B590029B005 /* libpd-ios.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -222,7 +252,6 @@
 				E6B8302F1E20D8AA005A6CC5 /* pd-patches in Resources */,
 				E6B7A3521E1A58040029B005 /* LaunchScreen.storyboard in Resources */,
 				E6B7A3511E1A58040029B005 /* Assets.xcassets in Resources */,
-				E6B7A3541E1A58040029B005 /* Info.plist in Resources */,
 				E6B7A3531E1A58040029B005 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,13 +396,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7P8C3UWHK5;
+				DEVELOPMENT_TEAM = 3NDA5N7SC5;
 				INFOPLIST_FILE = "Swift-libpd-example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Swift-libpd-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				USER_HEADER_SEARCH_PATHS = "pd-for-ios/libpd/**";
 			};
 			name = Debug;
@@ -382,13 +411,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7P8C3UWHK5;
+				DEVELOPMENT_TEAM = 3NDA5N7SC5;
 				INFOPLIST_FILE = "Swift-libpd-example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Swift-libpd-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				USER_HEADER_SEARCH_PATHS = "pd-for-ios/libpd/**";
 			};
 			name = Release;

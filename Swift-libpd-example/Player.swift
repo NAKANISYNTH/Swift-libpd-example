@@ -20,7 +20,7 @@ class Player : NSObject, PdReceiverDelegate{
     
     override init() {
         super.init()
-        NotificationCenter.default.addObserver(self, selector: #selector(AVAudioSessionRouteChange(notification:)), name: .AVAudioSessionRouteChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(AVAudioSessionRouteChange(notification:)), name: AVAudioSession.routeChangeNotification, object: nil)
     }
     
     func openPdFile(){
@@ -28,8 +28,8 @@ class Player : NSObject, PdReceiverDelegate{
         print("preferredSampleRate:",AVAudioSession.sharedInstance().preferredSampleRate)
         print("sample rate:",AVAudioSession.sharedInstance().sampleRate)
         let sampleRate = AVAudioSession.sharedInstance().sampleRate
-        audioController.configurePlayback(withSampleRate: Int32(sampleRate), numberChannels: 2, inputEnabled: false, mixingEnabled: true)
-        audioController.isActive = true
+        audioController?.configurePlayback(withSampleRate: Int32(sampleRate), numberChannels: 2, inputEnabled: false, mixingEnabled: true)
+        audioController?.isActive = true
         
         if pdPointer == nil {
             
@@ -44,16 +44,16 @@ class Player : NSObject, PdReceiverDelegate{
             pdPointer = nil
             print("close pd file")
         }
-        audioController.isActive = false
+        audioController?.isActive = false
     }
     
-    func AVAudioSessionRouteChange(notification:Notification) {
+    @objc func AVAudioSessionRouteChange(notification:Notification) {
         print(AVAudioSession.sharedInstance().currentRoute.outputs)
         print("preferredSampleRate:",AVAudioSession.sharedInstance().preferredSampleRate)
         print("sample rate:",AVAudioSession.sharedInstance().sampleRate)
         
         
         let sampleRate = AVAudioSession.sharedInstance().sampleRate
-        audioController.configurePlayback(withSampleRate: Int32(sampleRate), numberChannels: 2, inputEnabled: false, mixingEnabled: true)
+        audioController?.configurePlayback(withSampleRate: Int32(sampleRate), numberChannels: 2, inputEnabled: false, mixingEnabled: true)
     }
 }
